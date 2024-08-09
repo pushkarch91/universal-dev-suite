@@ -13,8 +13,21 @@
 	<groupId>com.company</groupId>
 	<artifactId>aggregator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>aggregator</name>
 	<description>Spring Boot Project Aggregator</description>
+	<modules>
+		<module>shared-common</module>
+		<module>shared-dto</module>
+		<module>shared-jpa</module>
+
+		<module>util-rules-engine</module>
+
+		<module>service-registry</module>
+		<module>service-api-gateway</module>
+		<module>service-product</module>
+		<module>service-coupon</module>
+	</modules>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
