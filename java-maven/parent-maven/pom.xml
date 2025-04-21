@@ -21,7 +21,6 @@
 
     <modules>
         <module>version</module>
-        <module>version/test</module>
     </modules>
 
     <properties>

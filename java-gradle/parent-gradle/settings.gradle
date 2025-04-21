@@ -1,1 +1,6 @@
 rootProject.name = 'parent-gradle'
+include 'shared-common'
+include 'employee-service'
+include 'department-service'
+include 'shared-dto'
+
