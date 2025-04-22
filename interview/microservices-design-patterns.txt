@@ -1,0 +1,14 @@
+Strangler
+Saga
+CQRS
+
+Strangler:
+Use to convert Monolithic to Microservices step by step
+
+Saga:
+DB for each individual service
+DB is shared among services
+
+Saga and CQRS is used when each service has its iwn separate DB.
+
+Can you please explain

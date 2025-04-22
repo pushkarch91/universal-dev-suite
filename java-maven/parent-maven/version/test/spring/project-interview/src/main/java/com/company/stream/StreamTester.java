@@ -10,7 +10,15 @@ public class StreamTester {
 
     public static void main(String[] args) {
         //colours();
-        colourMap();
+        //colourMap();
+        System.out.println(countChar());
+    }
+
+    private static Map<Character, Long> countChar() {
+        String ecommerce = "ecommerce";
+        return ecommerce.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
     public static void colours() {

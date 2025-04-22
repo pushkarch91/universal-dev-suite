@@ -1,0 +1,106 @@
+- Can you please explain about your recent project and introduce yourself?
+- Sprint Ceremonies
+
+Which Java Version you have worked?
+
+Vulnerabilities in Code
+- How do you review their code and collaborate with the team members?
+- How to overcome a user story size bigger than 1 Sprint?
+
+ClassNotFoundException vs NoClassDefFoundError
+How Hashing Works in Java?
+HashMap Collision Resolution
+- Separate Chaining
+- Open Addressing
+ConcurrentHashMap vs SynchronizedMap
+Immutable Classes in Java
+Can we customize a specific AutoConfiguration in Spring Boot?
+
+Major Challenges in Microservices?
+
+Circuit Breaker Design Pattern?
+Open
+Closed
+Half Open
+
+   +--------+       failureThreshold      +-------+
+   | Closed |  ----------------------->  | Open  |
+   +--------+                            +-------+
+       ^                                     |
+       | success                             |
+       |                                     | waitTimeElapsed
+   +------------+   successThreshold   +-------------+
+   | Half-Open  | <------------------  | Half-Open   |
+   +------------+                      +-------------+
+
+Pub Sub Pattern
+Maven LifeCycle
+
+How to ensure Java App is Scalable and Maintainable?
+SOLID Principles?
+Sprint Version upgrade?
+
+Stream API Count Occurrence of each character in a given String?
+
+How much rate in microservices?
+Tools used for microservices?
+
+profile-service
+statement-service
+
+SOLID
+
+@Autowired vs @Qualifier
+CAP Theorem
+Log4J Issue
+
+Surendharan
+
+10 Year Exp, Joined Ford 6 months back
+
+Ecomm Platform
+Lead
+15
+
+GCP and Cloud Stuff
+Limited Team Leading Experience
+
+paypal:
+Redirection Strategy
+
+Microservices Exp: 9 Years
+Cloud Exp:
+
+Microservices:
+Key Components Experience:
+
+API Gateway
+Discovery
+Config Server
+Inter Service Comm
+
+Each Service Have their own DB: Distrubuted
+Resilence4j
+Observability
+Security
+Distributed
+
+Containerized Approach
+DB layer
+
+Logging:
+ELK or Splunk
+
+Correlation ID?
+
+Dirty Read?
+Locking?
+
+READP_UNCOMMITTED
+
+User Service
+Email Service
+
+How to secure your API? (HTTPS)
+How JWT Token is verified?
+Kong Gateway?

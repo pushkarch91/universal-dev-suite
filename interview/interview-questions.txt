@@ -1,0 +1,35 @@
+How microservices communicate with each other?
+Synchronous Communication
+Asynchrnous Communication
+
+How to handle concurrent requests?
+Optimistic Locking
+Pessimistic Locking
+
+In Microservices:
+Transactional Boundaries
+Saga Pattern
+- Orchestration 
+- Choreography
+
+Distributed Locks (Zookeeper, Redis Lock)
+
+Tow Phase Commit
+Eventual Consistency + Outbox Pattern
+CQRS (Command Query Responsibility Segregation)
+Orchestration
+BPMN (Business Process Model and Notation)
+
+How to improve performance in Microservices?
+1. Use Lightweight Protocol (like GRPC over REST)
+2. Reduce Network Hops
+3. Caching (Memory Cache: Caffeine, Distrubuted Cache: Redis)
+4. Asynchronous Processing
+5. Reduce Latency (Resilience4j: Circuit Breaker, Rate Limiter, Retry Pattern)
+6. Database: Indexing, Batch Processing
+7. Messaging and Event Driven Architecture
+(Kafka)
+8. Infrastructure (Auto Scaling, Load Balancing, CDN)
+9. Observability and Profiling (JProfiler, Actuator)
+10. Metrics: Expose Prometheus Metrics -> Grafana Dashboard -> Analyze Latency and Throughput
+
