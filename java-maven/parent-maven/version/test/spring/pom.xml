@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>project-practise</module>
-        <module>project-leetcode</module>
         <module>project-interview</module>
         <module>project-spring-boot</module>
         <module>project-product</module>
