@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class P0026RemoveDuplicatesFromSortedArray {
 
     public static void main(String[] args) {
-        int[] nums = {1, 1, 2, 2, 2, 3, 3, 4, 5};
+        int[] nums = {1, 1, 2, 2, 2, 3, 3, 4, 5,9};
         P0026RemoveDuplicatesFromSortedArray obj = new P0026RemoveDuplicatesFromSortedArray();
         System.out.println(Arrays.toString(obj.removeDuplicates(nums)));
         System.out.println(obj.removeDuplicatesAndSortInPlace(nums));
@@ -29,14 +29,14 @@ public class P0026RemoveDuplicatesFromSortedArray {
 
         Arrays.sort(nums);
 
-        int j = 0;
+        int i = 0;
 
-        for (int i = 1; i < n; i++) {
+        for (int j = 1; j < n; j++) {
             if (nums[i] != nums[j]) {
-                j++;
-                nums[j] = nums[i];
+                i++;
+                nums[i] = nums[j];
             }
         }
-        return j + 1;
+        return i + 1;
     }
 }
