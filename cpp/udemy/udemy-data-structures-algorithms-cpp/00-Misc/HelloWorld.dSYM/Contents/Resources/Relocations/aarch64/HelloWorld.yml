@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/pushkarchauhan91/Documents/workspaces/workspace_intellij/universal-dev-suite/cpp/udemy/00-Misc/HelloWorld'
+relocations:     []
+...
