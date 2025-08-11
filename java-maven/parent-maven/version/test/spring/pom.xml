@@ -16,18 +16,11 @@
 
     <modules>
         <module>project-interview</module>
-        <module>project-multiple-database</module>
         <module>project-practise</module>
-        <module>project-product</module>
-        <module>project-spring-boot</module>
-        <module>tutor-javatechie</module>
+        <module>tutor</module>
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

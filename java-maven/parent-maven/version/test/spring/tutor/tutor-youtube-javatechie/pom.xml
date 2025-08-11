@@ -5,31 +5,24 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.company</groupId>
-        <artifactId>spring</artifactId>
+        <artifactId>tutor</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>project-interview</artifactId>
+    <artifactId>tutor-youtube-javatechie</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-    <properties>
-        <mainClass>com.company.Main</mainClass>
-    </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>javatechie-multithreading</module>
+        <module>javatechie-virtual-threads</module>
+    </modules>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>${mainClass}</mainClass>
-                </configuration>
             </plugin>
 
             <plugin>

@@ -5,20 +5,30 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.company</groupId>
-        <artifactId>spring</artifactId>
+        <artifactId>tutor-udemy-bharath-thippireddy</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>project-interview</artifactId>
+    <groupId>com.bharath.springdatajpa</groupId>
+    <artifactId>bharath-2-springdatajpa</artifactId>
 
     <properties>
-        <mainClass>com.company.Main</mainClass>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -27,18 +37,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>${mainClass}</mainClass>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin}</version>
-                <configuration>
-                    <release>${java.version}</release>
-                </configuration>
             </plugin>
         </plugins>
     </build>
