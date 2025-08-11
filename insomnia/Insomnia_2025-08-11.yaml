@@ -1,0 +1,207 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1752311684096
+  modified: 1752311684096
+  description: ""
+collection:
+  - name: parent
+    meta:
+      id: fld_7e4dbad76c3446b5a9596115f28def5d
+      created: 1752927283473
+      modified: 1752927283473
+      sortKey: -1752927283473
+      description: ""
+    children:
+      - name: tutor-youtube-javatechie
+        meta:
+          id: fld_459e26ef5356471c87759d0ade3302bd
+          created: 1752927304407
+          modified: 1753070760228
+          sortKey: -1752927304407
+          description: ""
+        children:
+          - name: javatechie-virtual-threads
+            meta:
+              id: fld_43051de1c23b493a8316dcbbb5e4d707
+              created: 1752927328912
+              modified: 1752927328912
+              sortKey: -1752927328912
+              description: ""
+            children:
+              - url: ""
+                name: POST-generateReportVirtual
+                meta:
+                  id: req_6cc87ca0f3b04ff993468aee68682d72
+                  created: 1752927334297
+                  modified: 1752927380869
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1752927334298
+                method: GET
+                headers:
+                  - name: User-Agent
+                    value: insomnia/11.3.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:9191/reports/US
+                name: POST-generateReport
+                meta:
+                  id: req_a1a7646cef954ebdab6826a33f6b66ae
+                  created: 1752927351377
+                  modified: 1752927454599
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1752927351377
+                method: POST
+                headers:
+                  - name: User-Agent
+                    value: insomnia/11.3.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: ""
+                name: POST-generateReportPlatform
+                meta:
+                  id: req_d78e3188ff9545af8ad0f4e545614cf9
+                  created: 1752927358845
+                  modified: 1752927374052
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1752927342837.5
+                method: GET
+                headers:
+                  - name: User-Agent
+                    value: insomnia/11.3.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+      - name: tutor-udemy-bharath
+        meta:
+          id: fld_d1dbbf2e79ce4c1ab0af2f1608e4e887
+          created: 1753070750649
+          modified: 1753070750649
+          sortKey: -1753070750649
+          description: ""
+        children:
+          - name: bharath-3-productrestapi
+            meta:
+              id: fld_f5b7e8e0324f4ee79b2d4d56ed68fb50
+              created: 1753070778531
+              modified: 1753070778531
+              sortKey: -1753070778531
+              description: ""
+            children:
+              - url: http://localhost:8080/productapi/products/
+                name: createProduct
+                meta:
+                  id: req_c891d70055654ba7ada05a9dd8b543d6
+                  created: 1753070794614
+                  modified: 1753414818739
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1753070794614
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |-
+                    {
+                    	"name": "IPhone",
+                    	"description": "Desc",
+                    	"price": 10.0
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/11.3.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:8080/productapi/products/1
+                name: getProduct
+                meta:
+                  id: req_4e2572a91a7a45a4bcf7b8444e03d0c3
+                  created: 1753414828134
+                  modified: 1753414840404
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1752999072995.5
+                method: GET
+                body:
+                  mimeType: application/octet-stream
+                  fileName: ""
+                headers:
+                  - name: Content-Type
+                    value: application/octet-stream
+                  - name: User-Agent
+                    value: insomnia/11.3.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: http://localhost:8080/productapi/products/1
+                name: deleteProduct
+                meta:
+                  id: req_62ea0a80f88044e4854da26d029554b8
+                  created: 1753414876378
+                  modified: 1753414880178
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1752963212186.25
+                method: DELETE
+                body:
+                  mimeType: application/octet-stream
+                  fileName: ""
+                headers:
+                  - name: Content-Type
+                    value: application/octet-stream
+                  - name: User-Agent
+                    value: insomnia/11.3.0
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1752311690467
+    modified: 1752311690467
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1752311690424
+    modified: 1752311690424
+    isPrivate: false
