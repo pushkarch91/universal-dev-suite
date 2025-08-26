@@ -1,4 +1,17 @@
 package com.company.model;
 
-public record Employee(int id, String name, double salary, Department department) {
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class Employee {
+    private int id;
+    private String name;
+    private double salary;
+    private Department department;
 }

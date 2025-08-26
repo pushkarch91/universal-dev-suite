@@ -18,6 +18,7 @@
         <module>project-interview</module>
         <module>project-practise</module>
         <module>tutor</module>
+        <module>testing</module>
     </modules>
 
     <dependencies>
