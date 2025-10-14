@@ -89,55 +89,51 @@ public class BaseClass {
         Membership platinum = getPlatinumMembership();
         Membership diamond = getDiamondMembership();
 
-        Customer john = Customer.builder()
-                .id(1L)
-                .firstName("John")
-                .lastName("Doe")
-                .email("john@example.com")
-                .phoneNumber("9999999999")
-                .status(CustomerStatus.ACTIVE)
-                .memberships(Arrays.asList(gold, trial))
-                .build();
+        Customer john = new Customer();
+        john.setId(1L);
+        john.setFirstName("John");
+        john.setLastName("Doe");
+        john.setEmail("john@example.com");
+        john.setPhoneNumber("9999999999");
+        john.setStatus(CustomerStatus.ACTIVE);
+        john.setMemberships(Arrays.asList(gold, trial));
 
-        Customer mary = Customer.builder()
-                .id(2L)
-                .firstName("Mary")
-                .lastName("Smith")
-                .email("mary@example.com")
-                .phoneNumber("8888888888")
-                .status(CustomerStatus.ACTIVE)
-                .memberships(Collections.singletonList(silver))
-                .build();
+        Customer mary = new Customer();
+        mary.setId(2L);
+        mary.setFirstName("Mary");
+        mary.setLastName("Smith");
+        mary.setEmail("mary@example.com");
+        mary.setPhoneNumber("8888888888");
+        mary.setStatus(CustomerStatus.ACTIVE);
+        mary.setMemberships(Collections.singletonList(silver));
 
-        Customer raj = Customer.builder()
-                .id(3L)
-                .firstName("Raj")
-                .lastName("Kumar")
-                .email("raj@example.com")
-                .phoneNumber("7777777777")
-                .status(CustomerStatus.INACTIVE)
-                .memberships(Collections.singletonList(platinum))
-                .build();
+        Customer raj = new Customer();
+        raj.setId(3L);
+        raj.setFirstName("Raj");
+        raj.setLastName("Kumar");
+        raj.setEmail("raj@example.com");
+        raj.setPhoneNumber("7777777777");
+        raj.setStatus(CustomerStatus.INACTIVE);
+        raj.setMemberships(Collections.singletonList(platinum));
 
-        Customer anita = Customer.builder()
-                .id(4L)
-                .firstName("Anita")
-                .lastName("Sharma")
-                .email("anita@example.com")
-                .phoneNumber("6666666666")
-                .status(CustomerStatus.ACTIVE)
-                .memberships(Collections.singletonList(diamond))
-                .build();
+        Customer anita = new Customer();
+        anita.setId(4L);
+        anita.setFirstName("Anita");
+        anita.setLastName("Sharma");
+        anita.setEmail("anita@example.com");
+        anita.setPhoneNumber("6666666666");
+        anita.setStatus(CustomerStatus.ACTIVE);
+        anita.setMemberships(Collections.singletonList(diamond));
 
-        Customer peter = Customer.builder()
-                .id(5L)
-                .firstName("Peter")
-                .lastName("Parker")
-                .email("peter@example.com")
-                .phoneNumber("5555555555")
-                .status(CustomerStatus.BLOCKED)
-                .memberships(Arrays.asList(silver, trial))
-                .build();
+        Customer peter = new Customer();
+        peter.setId(5L);
+        peter.setFirstName("Peter");
+        peter.setLastName("Parker");
+        peter.setEmail("peter@example.com");
+        peter.setPhoneNumber("5555555555");
+        peter.setStatus(CustomerStatus.BLOCKED);
+        peter.setMemberships(Arrays.asList(silver, trial));
+
 
         return Arrays.asList(john, mary, raj, anita, peter);
     }

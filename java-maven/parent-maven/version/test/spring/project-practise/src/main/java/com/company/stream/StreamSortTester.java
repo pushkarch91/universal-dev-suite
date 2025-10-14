@@ -21,13 +21,13 @@ public class StreamSortTester extends BaseStream {
 
     public void sortEmployeesBySalaryAscending(List<Employee> employees) {
         employees.stream()
-                .sorted(Comparator.comparingDouble(Employee::getSalary))
+                .sorted(Comparator.comparingDouble(Employee::salary))
                 .forEach(System.out::println);
     }
 
     public void sortEmployeesBySalaryDescending(List<Employee> employees) {
         employees.stream()
-                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+                .sorted(Comparator.comparingDouble(Employee::salary).reversed())
                 .forEach(System.out::println);
     }
 }

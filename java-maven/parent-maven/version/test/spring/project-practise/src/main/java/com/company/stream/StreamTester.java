@@ -22,19 +22,19 @@ public class StreamTester extends BaseStream {
 
     public void printAllEmployees(List<Employee> employees) {
         employees.stream()
-                .map(Employee::getName)
+                .map(Employee::name)
                 .forEach(System.out::println);
     }
 
     public void filterEmployeesBySalaryGreaterThan(List<Employee> employees, double salary) {
         employees.stream()
-                .filter(e -> e.getSalary() > salary)
+                .filter(e -> e.salary() > salary)
                 .forEach(System.out::println);
     }
 
     public void printEmployeeFromDept(List<Employee> employees, String deptName) {
         employees.stream()
-                .filter(e -> e.getDepartment().getName().equalsIgnoreCase(deptName))
+                .filter(e -> e.department().name().equalsIgnoreCase(deptName))
                 .forEach(System.out::println);
     }
 }

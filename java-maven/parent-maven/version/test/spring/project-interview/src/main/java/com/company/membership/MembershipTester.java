@@ -1,10 +1,6 @@
 package com.company.membership;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,62 +13,72 @@ public class MembershipTester {
 
     public static void main(String[] args) {
 
-        Customer mark = Customer.builder().name("mark").joinDate(LocalDate.of(2020, 1, 1)).build();
-        Customer steve = Customer.builder().name("steve").joinDate(LocalDate.of(2020, 1, 1)).build();
-        Customer adam = Customer.builder().name("adam").joinDate(LocalDate.of(2020, 1, 1)).build();
-        Customer michael = Customer.builder().name("michael").joinDate(LocalDate.of(2020, 1, 1)).build();
-        Customer andrew = Customer.builder().name("andrew").joinDate(LocalDate.of(2020, 1, 1)).build();
+        Customer mark = new Customer();
+        mark.setName("mark");
+        mark.setJoinDate(LocalDate.of(2020, 1, 1));
 
-        mark.setSubscriptions(List.of(
-                Subscription.builder()
-                        .type("GOLD")
-                        .startDate(LocalDate.now().minusMonths(3))
-                        .endDate(LocalDate.now().plusMonths(3))
-                        .customer(mark)
-                        .build()
-        ));
+        Customer steve = new Customer();
+        steve.setName("steve");
+        steve.setJoinDate(LocalDate.of(2020, 1, 1));
 
-        steve.setSubscriptions(List.of(
-                Subscription.builder()
-                        .type("SILVER")
-                        .startDate(LocalDate.now().minusMonths(1))
-                        .endDate(LocalDate.now().plusMonths(1))
-                        .customer(steve)
-                        .build()
-        ));
+        Customer adam = new Customer();
+        adam.setName("adam");
+        adam.setJoinDate(LocalDate.of(2020, 1, 1));
 
-        adam.setSubscriptions(List.of(
-                Subscription.builder()
-                        .type("GOLD")
-                        .startDate(LocalDate.now().minusMonths(5))
-                        .endDate(LocalDate.now().minusMonths(1)) // expired
-                        .customer(adam)
-                        .build()
-        ));
+        Customer michael = new Customer();
+        michael.setName("michael");
+        michael.setJoinDate(LocalDate.of(2020, 1, 1));
 
-        michael.setSubscriptions(List.of(
-                Subscription.builder()
-                        .type("PLATINUM")
-                        .startDate(LocalDate.now().minusDays(10))
-                        .endDate(LocalDate.now().plusDays(20))
-                        .customer(michael)
-                        .build(),
-                Subscription.builder()
-                        .type("GOLD")
-                        .startDate(LocalDate.now().minusMonths(1))
-                        .endDate(LocalDate.now().plusMonths(1))
-                        .customer(michael)
-                        .build()
-        ));
+        Customer andrew = new Customer();
+        andrew.setName("andrew");
+        andrew.setJoinDate(LocalDate.of(2020, 1, 1));
 
-        andrew.setSubscriptions(List.of(
-                Subscription.builder()
-                        .type("SILVER")
-                        .startDate(LocalDate.now().minusMonths(1))
-                        .endDate(LocalDate.now().plusMonths(1))
-                        .customer(andrew)
-                        .build()
-        ));
+        // mark subscriptions
+        Subscription markGold = new Subscription();
+        markGold.setType("GOLD");
+        markGold.setStartDate(LocalDate.now().minusMonths(3));
+        markGold.setEndDate(LocalDate.now().plusMonths(3));
+        markGold.setCustomer(mark);
+        mark.setSubscriptions(List.of(markGold));
+
+        // steve subscriptions
+        Subscription steveSilver = new Subscription();
+        steveSilver.setType("SILVER");
+        steveSilver.setStartDate(LocalDate.now().minusMonths(1));
+        steveSilver.setEndDate(LocalDate.now().plusMonths(1));
+        steveSilver.setCustomer(steve);
+        steve.setSubscriptions(List.of(steveSilver));
+
+        // adam subscriptions (expired)
+        Subscription adamGold = new Subscription();
+        adamGold.setType("GOLD");
+        adamGold.setStartDate(LocalDate.now().minusMonths(5));
+        adamGold.setEndDate(LocalDate.now().minusMonths(1));
+        adamGold.setCustomer(adam);
+        adam.setSubscriptions(List.of(adamGold));
+
+        // michael subscriptions (two active)
+        Subscription michaelPlatinum = new Subscription();
+        michaelPlatinum.setType("PLATINUM");
+        michaelPlatinum.setStartDate(LocalDate.now().minusDays(10));
+        michaelPlatinum.setEndDate(LocalDate.now().plusDays(20));
+        michaelPlatinum.setCustomer(michael);
+
+        Subscription michaelGold = new Subscription();
+        michaelGold.setType("GOLD");
+        michaelGold.setStartDate(LocalDate.now().minusMonths(1));
+        michaelGold.setEndDate(LocalDate.now().plusMonths(1));
+        michaelGold.setCustomer(michael);
+
+        michael.setSubscriptions(List.of(michaelPlatinum, michaelGold));
+
+        // andrew subscriptions
+        Subscription andrewSilver = new Subscription();
+        andrewSilver.setType("SILVER");
+        andrewSilver.setStartDate(LocalDate.now().minusMonths(1));
+        andrewSilver.setEndDate(LocalDate.now().plusMonths(1));
+        andrewSilver.setCustomer(andrew);
+        andrew.setSubscriptions(List.of(andrewSilver));
 
         List<Customer> customers = new ArrayList<>(List.of(mark, steve, adam, michael, andrew));
 
@@ -99,15 +105,10 @@ public class MembershipTester {
 
         System.out.println("\nCustomers whose all memberships have expired:");
         expiredCustomers.forEach(c -> System.out.println(c.getName()));
-
     }
 }
 
 @Entity
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 class Customer {
     @Id
     private Long id;
@@ -117,13 +118,53 @@ class Customer {
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Subscription> subscriptions = new ArrayList<>();
+
+    // --- constructors ---
+    public Customer() {
+    }
+
+    public Customer(Long id, String name, LocalDate joinDate, List<Subscription> subscriptions) {
+        this.id = id;
+        this.name = name;
+        this.joinDate = joinDate;
+        this.subscriptions = subscriptions != null ? subscriptions : new ArrayList<>();
+    }
+
+    // --- getters & setters ---
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(LocalDate joinDate) {
+        this.joinDate = joinDate;
+    }
+
+    public List<Subscription> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(List<Subscription> subscriptions) {
+        this.subscriptions = subscriptions != null ? subscriptions : new ArrayList<>();
+    }
 }
 
 @Entity
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
 class Subscription {
     @Id
     private Long id;
@@ -135,5 +176,57 @@ class Subscription {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private Customer customer;
-}
 
+    // --- constructors ---
+    public Subscription() {
+    }
+
+    public Subscription(Long id, String type, LocalDate startDate, LocalDate endDate, Customer customer) {
+        this.id = id;
+        this.type = type;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.customer = customer;
+    }
+
+    // --- getters & setters ---
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+}
