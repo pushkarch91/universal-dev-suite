@@ -4,37 +4,36 @@ import java.util.Arrays;
 
 public class P0026RemoveDuplicatesFromSortedArray {
 
-    public static void main(String[] args) {
-        int[] nums = {1, 1, 2, 2, 2, 3, 3, 4, 5,9};
+    static void main() {
+        int[] numbers = {1, 1, 2, 2, 2, 3, 3, 4, 5, 9};
         P0026RemoveDuplicatesFromSortedArray obj = new P0026RemoveDuplicatesFromSortedArray();
-        System.out.println(Arrays.toString(obj.removeDuplicates(nums)));
-        System.out.println(obj.removeDuplicatesAndSortInPlace(nums));
+        System.out.println(Arrays.toString(obj.removeDuplicates(numbers)));
+        System.out.println(obj.removeDuplicatesAndSortInPlace(numbers));
     }
 
-    public int[] removeDuplicates(int[] nums) {
+    public int[] removeDuplicates(int[] numbers) {
         int j = 0;
 
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[j]) {
+        for (int i = 1; i < numbers.length; i++) {
+            if (numbers[i] != numbers[j]) {
                 j++;
-                nums[j] = nums[i];
+                numbers[j] = numbers[i];
             }
         }
-        return Arrays.copyOf(nums, j + 1);
+        return Arrays.copyOf(numbers, j + 1);
     }
 
-    public int removeDuplicatesAndSortInPlace(int[] nums) {
-        int n = nums.length;
-        if (n == 0) return 0;
+    public int removeDuplicatesAndSortInPlace(int[] numbers) {
+        if (numbers == null || numbers.length == 0) return 0;
 
-        Arrays.sort(nums);
+        Arrays.sort(numbers);
 
         int i = 0;
 
-        for (int j = 1; j < n; j++) {
-            if (nums[i] != nums[j]) {
+        for (int j = 1; j < numbers.length; j++) {
+            if (numbers[i] != numbers[j]) {
                 i++;
-                nums[i] = nums[j];
+                numbers[i] = numbers[j];
             }
         }
         return i + 1;

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class P0412FizzBuzz {
 
-    public static void main(String[] args) {
+    static void main(String... args) {
         P0412FizzBuzz p = new P0412FizzBuzz();
         System.out.println(p.fizzBuzz(5));
         System.out.println(p.fizzBuzz(15));
