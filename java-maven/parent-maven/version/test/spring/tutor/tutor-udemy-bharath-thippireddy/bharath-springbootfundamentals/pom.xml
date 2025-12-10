@@ -15,7 +15,6 @@
     <modules>
         <module>bharath-1-core</module>
         <module>bharath-2-springdatajpa</module>
-        <module>bharath-3-productrestapi</module>
     </modules>
 
 </project>
