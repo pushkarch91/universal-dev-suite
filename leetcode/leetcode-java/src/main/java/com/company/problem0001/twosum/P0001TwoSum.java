@@ -7,12 +7,11 @@ import java.util.Map;
 public class P0001TwoSum {
 
     static void main() {
-
-        P0001TwoSum obj = new P0001TwoSum();
-        int[] numbers = {2, 7, 11, 15};
+        P0001TwoSum solution = new P0001TwoSum();
+        int[] numbers = {15, 7, 2, 11};
         int target = 9;
-        System.out.println(Arrays.toString(obj.twoSumUsingForLoop(numbers, target)));
-        System.out.println(Arrays.toString(obj.twoSumUsingHashMap(numbers, target)));
+        System.out.println(Arrays.toString(solution.twoSumUsingForLoop(numbers, target)));
+        System.out.println(Arrays.toString(solution.twoSumUsingHashMap(numbers, target)));
     }
 
     public int[] twoSumUsingForLoop(int[] numbers, int target) {

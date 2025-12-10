@@ -4,3 +4,5 @@ void main() {
     String name = IO.readln();
     IO.println("Welcome: " + name);
 }
+
+// We can access instance variable inside instance method

@@ -6,14 +6,14 @@ import java.util.List;
 public class P0412FizzBuzz {
 
     static void main(String... args) {
-        P0412FizzBuzz p = new P0412FizzBuzz();
-        System.out.println(p.fizzBuzz(5));
-        System.out.println(p.fizzBuzz(15));
-        System.out.println(p.fizzBuzz(25));
-        System.out.println(p.fizzBuzz(30));
-        System.out.println(p.fizzBuzz(35));
-        System.out.println(p.fizzBuzz(45));
-        System.out.println(p.fizzBuzz(55));
+        P0412FizzBuzz solution = new P0412FizzBuzz();
+        System.out.println(solution.fizzBuzz(5));
+        System.out.println(solution.fizzBuzz(15));
+        System.out.println(solution.fizzBuzz(25));
+        System.out.println(solution.fizzBuzz(30));
+        System.out.println(solution.fizzBuzz(35));
+        System.out.println(solution.fizzBuzz(45));
+        System.out.println(solution.fizzBuzz(55));
     }
 
     public List<String> fizzBuzz(int n) {

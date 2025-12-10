@@ -1,7 +1,6 @@
 - Can you please explain about your recent project and introduce yourself?
-- Sprint Ceremonies
 
-Which Java Version you have worked?
+Which Java, Spring Boot Version you have worked?
 
 Vulnerabilities in Code
 - How do you review their code and collaborate with the team members?

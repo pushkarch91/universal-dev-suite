@@ -1,4 +1,4 @@
-package com.company.java25;
+package com.company.java25.instancevariableaccessfrommain;
 
 public class InstanceVariableAccessFromMain {
 

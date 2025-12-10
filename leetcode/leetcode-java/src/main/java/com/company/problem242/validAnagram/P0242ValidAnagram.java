@@ -1,4 +1,27 @@
 package com.company.problem242.validAnagram;
 
+// Anagram s: cat t: tac. hence s and t are anagram
 public class P0242ValidAnagram {
+
+    static void main() {
+        P0242ValidAnagram solution = new P0242ValidAnagram();
+        System.out.println(solution.isValidAnagram("cat", "tac"));
+    }
+
+    private boolean isValidAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int[] charCounts = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            charCounts[s.charAt(i) - 'a']++;
+            charCounts[t.charAt(i) - 'a']--;
+        }
+        for (int i = 0; i < 26; i++) {
+            if (charCounts[i] != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

@@ -6,9 +6,9 @@ import java.util.Set;
 public class P0217ContainsDuplicate {
 
     static void main() {
-        P0217ContainsDuplicate containsDuplicate = new P0217ContainsDuplicate();
-        System.out.println(containsDuplicate.containsDuplicate(new int[]{1, 3, 2, 5}));
-        System.out.println(containsDuplicate.containsDuplicate(new int[]{1, 3, 1, 2, 5}));
+        P0217ContainsDuplicate solution = new P0217ContainsDuplicate();
+        System.out.println(solution.containsDuplicate(new int[]{1, 3, 2, 5}));
+        System.out.println(solution.containsDuplicate(new int[]{1, 3, 1, 2, 5}));
     }
 
     public boolean containsDuplicate(int[] numbers) {

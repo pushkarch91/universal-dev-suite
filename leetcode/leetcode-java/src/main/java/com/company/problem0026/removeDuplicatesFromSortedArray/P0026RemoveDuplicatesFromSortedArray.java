@@ -6,9 +6,9 @@ public class P0026RemoveDuplicatesFromSortedArray {
 
     static void main() {
         int[] numbers = {1, 1, 2, 2, 2, 3, 3, 4, 5, 9};
-        P0026RemoveDuplicatesFromSortedArray obj = new P0026RemoveDuplicatesFromSortedArray();
-        System.out.println(Arrays.toString(obj.removeDuplicates(numbers)));
-        System.out.println(obj.removeDuplicatesAndSortInPlace(numbers));
+        P0026RemoveDuplicatesFromSortedArray solution = new P0026RemoveDuplicatesFromSortedArray();
+        System.out.println(Arrays.toString(solution.removeDuplicates(numbers)));
+        System.out.println(solution.removeDuplicatesAndSortInPlace(numbers));
     }
 
     public int[] removeDuplicates(int[] numbers) {
